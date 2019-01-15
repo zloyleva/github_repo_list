@@ -166,6 +166,8 @@ return [
          * Package Service Providers...
          */
 
+        App\Providers\GithubApiProvider::class,
+
         /*
          * Application Service Providers...
          */
