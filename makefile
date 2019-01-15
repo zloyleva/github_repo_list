@@ -25,3 +25,6 @@ refresh: #Refresh the database and run all database seeds
 
 create_model: #create model name=[modelName]
 	@docker-compose exec app php artisan make:model "Models\$(name)" -m
+
+create_controller: #create controller name=[controllerName]
+	@docker-compose exec app php artisan make:controller $(name)

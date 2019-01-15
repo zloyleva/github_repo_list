@@ -21,12 +21,16 @@ class GithubApi{
      * @return \Exception|ClientException|ConnectException|RequestException|ServerException|\Psr\Http\Message\ResponseInterface
      */
     public function getAllPublicRepos(){
+        return $this->makeRequest("repositories");
+    }
 
-        try{
-            return $this->makeRequest("repositories");
-        }catch (RequestException | ConnectException | ServerException | ClientException $e){
-            return $e;
-        }
+    /**
+     * @param string $owner
+     * @param string $repo
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function getSingleRepo(string $owner, string $repo){
+        return $this->makeRequest("repos/$owner/$repo");
     }
 
     /**
@@ -34,6 +38,10 @@ class GithubApi{
      * @return \Psr\Http\Message\ResponseInterface
      */
     private function makeRequest(string $query){
-        return $this->client->get($this->url.$query);
+        try{
+            return $this->client->get($this->url.$query);
+        }catch (RequestException | ConnectException | ServerException | ClientException $e){
+            return $e;
+        }
     }
 }

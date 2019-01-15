@@ -25,4 +25,20 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * @param string $owner
+     * @param string $repo
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(string $owner, string $repo)
+    {
+        //Todo add validation(and/or Form request...)
+        return view('repo',[
+            "query" =>[
+                "owner" => $owner,
+                "repo" => $repo,
+            ]
+        ]);
+    }
 }
