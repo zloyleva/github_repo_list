@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Git repositories list</div>
+                <div class="card-header">Git Repository by {{ $query['owner'] }} : {{ $query['repo'] }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                        <repo-dashboard-component></repo-dashboard-component>
+                        <single-repo-component
+                            owner={{$query['owner']}}
+                            repo={{$query['repo']}}
+                        ></single-repo-component>
 
                 </div>
             </div>

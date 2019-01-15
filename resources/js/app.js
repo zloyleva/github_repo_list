@@ -20,7 +20,21 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+library.add(faThumbsUp, faThumbsDown);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+
+
+Vue.component('repo-dashboard-component', require('./components/RepoDashboardComponent.vue').default);
+Vue.component('search-repo-component', require('./components/SearchRepoComponent.vue').default);
+Vue.component('repo-list-component', require('./components/RepoListComponent.vue').default);
+Vue.component('repo-list-element-component', require('./components/RepoListElementComponent.vue').default);
+
+Vue.component('single-repo-component', require('./components/SingleRepoComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
