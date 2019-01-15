@@ -22,3 +22,6 @@ tinker: #Run tinker
 
 refresh: #Refresh the database and run all database seeds
 	@docker-compose exec app php artisan migrate:refresh --seed
+
+create_model: #create model name=[modelName]
+	@docker-compose exec app php artisan make:model "Models\$(name)" -m
