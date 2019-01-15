@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/repo', 'GithubAPIController@index');
+Route::get('/repo/{owner}/{repo}', 'GithubAPIController@show');

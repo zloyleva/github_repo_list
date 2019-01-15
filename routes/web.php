@@ -14,3 +14,4 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('repo/{owner}/{repo}', 'HomeController@show')->name('show');
