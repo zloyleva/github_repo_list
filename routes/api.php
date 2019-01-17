@@ -26,3 +26,12 @@ Route::group([
 
     Route::post('me', 'AuthController@me');
 });
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'rate'
+], function ($router) {
+    Route::post('/show', 'ReposRateController@show');
+    Route::post('/', 'ReposRateController@index');
+    Route::put('/', 'ReposRateController@update');
+});

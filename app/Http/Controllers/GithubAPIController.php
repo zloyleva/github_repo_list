@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ReposRate;
 use Illuminate\Http\Request;
 use App\Library\GithubApi\GithubApi;
 
 class GithubAPIController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth:api');
     }
+
     /**
      * @param GithubApi $githubApi
      * @return \Illuminate\Http\JsonResponse

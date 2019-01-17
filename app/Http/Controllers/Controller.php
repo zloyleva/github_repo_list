@@ -21,7 +21,6 @@ class Controller extends BaseController
      */
     protected function jsonResponse($defaultResponse, int $status = 200)
     {
-
         if(is_array($defaultResponse)){
             $defaultResponse = ["data" => $defaultResponse];
         }elseif ($defaultResponse instanceof Response) {
