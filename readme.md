@@ -54,7 +54,12 @@
     mysql> EXIT;
 
     ```
-    
+7. Run FrontEnd
+
+    ```bash
+    cd client && npm start
+    ```
+    before need install dependencies
     
     
 ## License
