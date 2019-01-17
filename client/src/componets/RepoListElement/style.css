@@ -1,0 +1,28 @@
+.Like__Control, .UnLike__Control{
+    color: #bdbdbd;
+}
+
+.Like__Control.active, .UnLike__Control.active{
+    color: crimson;
+}
+
+.Upload__Rate__Status__Section{
+    position: relative;
+}
+
+.Upload__Rate__Status__Section .Upload__Rate__Status{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.66);
+}
+
+button{
+    cursor: pointer;
+}
+
+button.btn-outline-secondary:disabled {
+    color: #fff;
+    background-color: #3287e2;
+    border: 1px solid transparent;
+}
