@@ -13,14 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/repo', 'GithubAPIController@index');
-Route::get('/repo/{owner}/{repo}', 'GithubAPIController@show');
-
 Route::group([
     'middleware' => 'api',
-    'prefix' => 'auth'
+//    'prefix' => 'auth'
 ], function ($router) {
+    Route::get('/repo', 'GithubAPIController@index');
+    Route::get('/repo/{owner}/{repo}', 'GithubAPIController@show');
+
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
+
+    Route::post('me', 'AuthController@me');
 });
